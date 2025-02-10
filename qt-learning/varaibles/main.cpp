@@ -1,6 +1,18 @@
 #include <QCoreApplication>
 #include <QDebug>
+#include <iostream>
 
+using namespace std;
+
+enum Colors {black, red, wight};
+
+struct Product
+{
+    int weight;
+    double value;
+    Colors color;
+
+};
 
 int main(int argc, char *argv[])
 {
@@ -41,6 +53,33 @@ int main(int argc, char *argv[])
 
     // void x = "vsky";
 
+    qInfo() << "ENUM";
+    // ENUMS: need to represent set of data.
+    int v = 0;
+    int y = 1;
+    int z = 2;
+    int e = 3;
+    // qInfo()  << x << y << z << e;
+
+    enum Color {red=0, green=1, blue=2};
+    Color color1 = Color::blue;
+    Color color2 = Color::red;
+    Color color3 = Color::green;
+
+    qInfo() << color1;
+
+    // struct
+    // std::cout << "Structures";
+
+    Product phone;
+    phone.weight = 7;
+    phone.value = 4000;
+    phone.color = Colors::black;
+
+    qInfo() << "phone color " << phone.color;
+    qInfo() << "phone value " << phone.value;
+    qInfo() << "phone weight " << phone.weight;
+    qInfo() << "size of " << sizeof(phone);
 
 
 
